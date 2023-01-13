@@ -7,10 +7,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class KonyvtarApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("konyvtar-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(KonyvtarApp.class.getResource("konyvtar-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("Könyvtár");
         stage.setScene(scene);

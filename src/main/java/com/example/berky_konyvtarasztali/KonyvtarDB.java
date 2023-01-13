@@ -9,7 +9,7 @@ public class KonyvtarDB {
     String DB_DRIVER = "mysql";
     String DB_HOST = "localhost";
     String DB_PORT = "3306";
-    String DB_DATABASE = "vizsga-2022";
+    String DB_DATABASE = "books";
     String DB_USER = "root";
     String DB_PASS = "";
 
@@ -21,8 +21,8 @@ public class KonyvtarDB {
     public List<Konyv> getKonyvek() throws SQLException {
         List<Konyv> konyvek = new ArrayList<>();
         String sql = "SELECT * FROM books";
-        Statement statement = conn.createStatement();
-        ResultSet resultSet = statement.executeQuery(sql);
+        Statement st = conn.createStatement();
+        ResultSet resultSet = st.executeQuery(sql);
         while (resultSet.next()){
             int id = resultSet.getInt("id");
             String title = resultSet.getString("title");
@@ -35,10 +35,10 @@ public class KonyvtarDB {
         return konyvek;
     }
 
-    public boolean deleteKonyv(Konyv torlendo) throws SQLException {
+    public boolean deleteKonyv(Konyv delete) throws SQLException {
         String sql = "DELETE FROM books WHERE id = ?";
-        PreparedStatement statement = conn.prepareStatement(sql);
-        statement.setInt(1, torlendo.getId());
-        return statement.executeUpdate() > 0;
+        PreparedStatement st = conn.prepareStatement(sql);
+        st.setInt(1, delete.getId());
+        return st.executeUpdate() > 0;
     }
 }

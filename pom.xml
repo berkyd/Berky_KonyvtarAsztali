@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.berky_konyvtarasztali/com.example.berky_konyvtarasztali.HelloApplication
+                                com.example.berky_konyvtarasztali/com.example.berky_konyvtarasztali.KonyvtarApp
                             </mainClass>
                         </configuration>
                     </execution>
